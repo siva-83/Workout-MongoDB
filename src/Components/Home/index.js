@@ -15,6 +15,8 @@ export default function Home(){
 // }
 const[element,setelement]=useState([])
 
+const[initial,setIntial]=useState("")
+
 useEffect(() => {
     fetch('http://localhost:8888/workouts',{
         method:"GET"
@@ -27,16 +29,24 @@ useEffect(() => {
     })
   }, [])
 
+
+  const settingvalue=(event)=>{
+        setIntial(event.target.value)
+  }
+
     return(
         <div className="main-home-container">
         <Header/>
         <div className="main-home-container-2">
+            <div>
             <div className="input-group input-cust">
-                <span class="input-group-text">With textarea</span>
-                <textarea class="form-control" aria-label="With textarea"></textarea>
+                <span class="input-group-text">Search</span>
+                {/* <textarea class="form-control" aria-label="With textarea" onChange={settingvalue}></textarea> */}
+                <input type="text" onChange={settingvalue} className="input-cont"/>
+             </div>
              </div>
              <ul className="list-item-container">
-             {element.length==0?"":element.map(each=>(<Card each={each}/>))}
+             {element.length==0?"":element.filter((eachele)=>(eachele.heading.toLowerCase().includes(initial))).map(each=>(<Card each={each}/>))}
              </ul>
         </div>
         </div>

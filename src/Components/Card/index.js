@@ -6,8 +6,9 @@ export default function Card(props){
     return(
         <Link className="card" to ={`/workouts/${props.each.id}`} >
                <img src={props.each.imageurl} className="cardimage"/>
-               <h1>{props.each.heading}</h1>
-               <p>{props.each.discriptionforcard}</p> 
+               <h1 className="card-head-calorie">calorie/hour:{props.each.Calorieburnperhour} calorie</h1>
+               <h1 className="card-head">{props.each.heading}</h1>
+               <p className="card-para">{props.each.discriptionforcard}</p> 
         </Link>
      
        

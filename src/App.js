@@ -11,7 +11,7 @@ function App() {
     <div className="App">
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<LoginRegister/>}/>
+      <Route path="/login" element={<LoginRegister/>}/>
       <Route element = {<PrivateRoute/>}>
       <Route path="/workouts/" element={<Home/>}/>
       <Route path="/workouts/:id" element={<Fullcard/>}/>
@@ -28,6 +28,6 @@ export default App;
 function PrivateRoute(){
   const token=Cookies.get("jwt_token")
   return (
-    <div>{token != undefined ? <Outlet/> : <Navigate to="/" />}</div>
+    <div>{token != undefined ? <Outlet/> : <Navigate to="/login" />}</div>
   )
 }
