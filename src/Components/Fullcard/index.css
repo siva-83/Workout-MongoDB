@@ -4,10 +4,10 @@
    
     width:70vw;
     height:90vh;
-   
+   padding-bottom: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     box-shadow: none ;
     overflow: auto;
@@ -27,11 +27,12 @@
 }
 .for-look{
     width: 100vw;
-    height:90vh;
+    /* height:90vh; */
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding:20px;
+    
     overflow: auto;
 }
 .full-card-para-cont{

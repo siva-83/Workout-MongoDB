@@ -72,8 +72,6 @@
       "fulldiscription": "The dumbbell is a type of exercise equipment used in weight training. Specifically, dumbbells are weights used without exercise machines. Dumbbells are sometimes also called hand weights and free weights—those used “free” of such equipment. Most dumbbells are designed with a narrow bar in the middle and two wider discs at each end. Some dumbbells are very light in weight (only a few pounds) while others are very heavy (50 pounds or more). They can be fixed in weight or variable. Specifically, dumbbells can vary in weight due to discs that can be added or removed from the bar by quantity and size (weight). In addition, dumbbells can be used individually (a dumbbell in one hand) or in pairs (one in each hand).",
       "Calorieburnperhour": 570
     }
-
-
   ],
   "Login": [
     {
@@ -87,6 +85,24 @@
       "password": "kanchi",
       "jwtToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ",
       "id": 2
+    },
+    {
+      "email": "12345@gmail.com",
+      "password": "123456",
+      "jwtToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ",
+      "id": 3
+    },
+    {
+      "email": "12345@gmail.com",
+      "password": "123456",
+      "jwtToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ",
+      "id": 4
+    },
+    {
+      "email": "1234@gmail.com",
+      "password": "123456",
+      "jwtToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ",
+      "id": 5
     }
   ]
 }

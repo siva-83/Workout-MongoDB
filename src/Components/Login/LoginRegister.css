@@ -1,10 +1,11 @@
 .app-container{
-    height: 100vh;
+    height: 90vh;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     background-color: #ffffff;
+    overflow: hidden;
 }
 .form-container{
     background-color: #ffffff;
@@ -39,4 +40,21 @@
     outline: none;
     text-decoration: underline;
     font-size: 13px;
+}
+
+.main-style{
+    font-weight:bold;
+    color:#329fc7;
+    margin-top:30px;
+    text-align: center;
+}
+
+.weblogo1{
+    height:100px;
+    width:100px;
+    border-radius: 60px
+}
+.finaltouch{
+    height:100vh;
+    overflow: hidden;
 }

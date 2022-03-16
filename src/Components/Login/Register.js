@@ -108,7 +108,7 @@ export default function Register() {
             </div>
             <button className='button' type='submit'>Register</button>
         </form>
-        {registrationstatus?<p className='status-para'>* successfully registered</p>:""}
+        {registrationstatus?<p className='status-para'> successfully registered</p>:""}
         
     </>
   )

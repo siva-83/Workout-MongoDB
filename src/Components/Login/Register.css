@@ -36,5 +36,6 @@
 }
 .status-para{
     color:rgb(26, 112, 26);
-    font-weight:bold
+    font-weight:bold;
+    text-align: center;
 }
