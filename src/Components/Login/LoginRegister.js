@@ -1,52 +1,25 @@
-// import React, {useState} from 'react'
-// import Login from './Login'
-// import Register from './Register'
-
-// export default function LoginRegister() {
-
-//     const[isLoginForm, setLoginForm] = useState(true)
-
-//     const changeToRegister = () =>{
-//         setLoginForm(!isLoginForm)
-//     }
-
-//     const changeToLogin = () =>[
-//         setLoginForm(!isLoginForm)
-//     ]
-
-//   return (
-//     <div>
-//         {isLoginForm ? 
-//         <div>
-//             <button onClick={changeToRegister}>Register</button>
-//             <Login/>
-//         </div> 
-//         :
-//         <div>
-//             <button onClick={changeToLogin}>Login</button>
-//             <Register/>
-//         </div>
-//         }
-//     </div>
-//   )
-// }
-
 import React, {useState} from 'react'
 import Login from './Login'
 import Register from './Register'
 import "./LoginRegister.css"
+import { useNavigate } from 'react-router-dom'
 
 export default function LoginRegister() {
 
+    const navigate=useNavigate()
     const[isLoginForm, setLoginForm] = useState(true)
 
     const changeToRegister = () =>{
         setLoginForm(!isLoginForm)
+        navigate("/signup")
+       
     }
 
-    const changeToLogin = () =>[
+    const changeToLogin = () =>{
+        navigate("/login")
         setLoginForm(!isLoginForm)
-    ]
+        
+    }
 
   return (
       <div className='finaltouch'>

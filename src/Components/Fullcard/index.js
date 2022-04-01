@@ -11,8 +11,12 @@ export default function Fullcard(){
 
     console.log("got it",req)
     useEffect(()=>{
-        fetch(`http://localhost:8888/workouts/${req.id}`,{method:"GET"}).then(res=>(res.json()))
-        .then((data)=>setfinal(data))
+        fetch(`http://localhost:4000/workouts/${req.id}`,{method:"GET"}).then(res=>(res.json()))
+        .then((data)=>{
+            console.log("jeffa",data)
+            setfinal(data)})
+
+        
     },[])
 
 

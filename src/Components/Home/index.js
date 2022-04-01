@@ -17,13 +17,23 @@ const[element,setelement]=useState([])
 
 const[initial,setIntial]=useState("")
 
-useEffect(() => {
-    fetch('http://localhost:8888/workouts',{
+useEffect(async() => {
+
+    console.log("i am in useeffect")
+    // const resp=await fetch("http://localhost:6000/workouts",{
+    //     method:"GET"
+    // })
+    // console.log(resp)
+
+    // const data=await resp.json()
+    // console.log("jeffa",data)
+    // setelement(data)
+    fetch('http://localhost:4000/workouts',{
         method:"GET"
     })
     .then(res => res.json())
     .then(data => {
-        console.log(data);
+        console.log("jeffa",data);
         setelement(data)
         ;
     })
@@ -46,7 +56,8 @@ useEffect(() => {
              </div>
              </div>
              <ul className="list-item-container">
-             {element.length==0?"":element.filter((eachele)=>(eachele.heading.toLowerCase().includes(initial))).map(each=>(<Card each={each}/>))}
+                 {element.length==0?"":element.map(each=>(<Card each={each}/>))}
+             {/* {element.length==0?"":element.filter((eachele)=>(eachele.heading.toLowerCase().includes(initial))).map(each=>(<Card each={each}/>))} */}
              </ul>
         </div>
         </div>
