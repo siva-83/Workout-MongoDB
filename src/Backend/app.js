@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const workoutRoute=require("./Routes/Data")
 const userRoute=require("./Routes/user")
 const colors = require('colors')
-
+//middlewares are still to be made in this project for smooth flow
 
 const url = 'mongodb://localhost:27017/sivadb';
 const connnectToDB = async () =>{
