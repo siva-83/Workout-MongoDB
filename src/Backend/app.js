@@ -11,9 +11,9 @@ const colors = require('colors')
 
 const url = 'mongodb://localhost:27017/sivadb';
 const connnectToDB = async () =>{
-    await mongoose.connect(url);
-   
-    console.log('connected to db'.green);
+  await mongoose.connect(url);
+
+  console.log("connected to db".green);
 }
 connnectToDB();
 
