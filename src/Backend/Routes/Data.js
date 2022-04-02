@@ -1,11 +1,11 @@
 const express = require('express');
-// const { isAuthenticatedUser, authorizeRoles } = require('../middlewares/auth');
+const { isAuthenticatedUser } = require('../Middlewares/auth');
 const router = express.Router();
 const workouts = require('../models/data')
 
 
 // protected route on back-end
-router.get('/',async (req, res) => {
+router.get('/',isAuthenticatedUser,async (req, res) => {
     // db and fetch all courses
 
     let data = await workouts.find();
@@ -13,7 +13,7 @@ router.get('/',async (req, res) => {
 
 })
 
-router.get('/:id',async (req, res) => {
+router.get('/:id',isAuthenticatedUser,async (req, res) => {
     // db and fetch all courses
     console.log(req.params.id)
     console.log("jeffa")
@@ -26,7 +26,7 @@ router.get('/:id',async (req, res) => {
 
 
     
-router.post('/', async (req, res) => {
+router.post('/',isAuthenticatedUser, async (req, res) => {
     // db and insert one course  
     console.log("i am ready",req.body)  
     let data = await workouts.create(req.body);

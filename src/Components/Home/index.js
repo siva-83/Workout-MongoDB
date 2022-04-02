@@ -2,6 +2,7 @@ import Header from "../Header"
 import { useEffect, useState } from "react"
 import "./index.css"
 import Card from "../Card"
+import Cookies from "js-cookie"
 
 export default function Home(){
 
@@ -20,6 +21,7 @@ const[initial,setIntial]=useState("")
 useEffect(async() => {
 
     console.log("i am in useeffect")
+    const jwtToken= Cookies.get("jwt_token")
     // const resp=await fetch("http://localhost:6000/workouts",{
     //     method:"GET"
     // })
@@ -29,7 +31,10 @@ useEffect(async() => {
     // console.log("jeffa",data)
     // setelement(data)
     fetch('http://localhost:4000/workouts',{
-        method:"GET"
+        method:"GET",
+        headers: {
+            Authorization: `Bearer ${jwtToken}`,
+          },
     })
     .then(res => res.json())
     .then(data => {
@@ -41,6 +46,7 @@ useEffect(async() => {
 
 
   const settingvalue=(event)=>{
+      console.log(event.target.value)
         setIntial(event.target.value)
   }
 
@@ -56,8 +62,8 @@ useEffect(async() => {
              </div>
              </div>
              <ul className="list-item-container">
-                 {element.length==0?"":element.map(each=>(<Card each={each}/>))}
-             {/* {element.length==0?"":element.filter((eachele)=>(eachele.heading.toLowerCase().includes(initial))).map(each=>(<Card each={each}/>))} */}
+                 {/* {element.length==0?"":element.map(each=>(<Card each={each}/>))} */}
+             {element.length==0?"":element.filter((eachele)=>(eachele.heading.toLowerCase().includes(initial))).map(each=>(<Card each={each}/>))}
              </ul>
         </div>
         </div>

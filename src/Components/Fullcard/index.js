@@ -2,6 +2,7 @@ import Header from "../Header"
 import { useEffect,useState } from "react"
 import { useParams } from "react-router-dom"
 import "./index.css"
+import Cookies from "js-cookie"
 
 export default function Fullcard(){
 
@@ -11,7 +12,10 @@ export default function Fullcard(){
 
     console.log("got it",req)
     useEffect(()=>{
-        fetch(`http://localhost:4000/workouts/${req.id}`,{method:"GET"}).then(res=>(res.json()))
+        const jwtToken= Cookies.get("jwt_token")
+        fetch(`http://localhost:4000/workouts/${req.id}`,{method:"GET", headers: {
+            Authorization: `Bearer ${jwtToken}`,
+          }}).then(res=>(res.json()))
         .then((data)=>{
             console.log("jeffa",data)
             setfinal(data)})

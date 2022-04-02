@@ -1,6 +1,7 @@
 const express = require('express');
-// const { isAuthenticatedUser, authorizeRoles } = require('../middlewares/auth');
+// const { isAuthenticatedUser, authorizeRoles } = require('../iddlewares/auth');
 const router = express.Router();
+const{authenticateUser,isAuthenticatedUser}=require("../Middlewares/auth")
 const users = require('../models/user')
 const jwt = require('jsonwebtoken')
 
@@ -36,9 +37,10 @@ router.post('/signup', async (req, res) => {
 })
 
 
-router.post("/login",async(req,res)=>{
+router.post("/login",authenticateUser,async(req,res)=>{
     const user = await users.findOne({email: req.body.email})
-    const token = users.getSignedJwtToken();
+    console.log("jeffa",user)
+    const token = user.getSignedJwtToken();
     res.status(200).json({auth: true, token: token});
 
 })

@@ -1,4 +1,5 @@
 const { strikethrough } = require('colors');
+
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const jwt = require('jsonwebtoken')
@@ -10,16 +11,14 @@ const userSchema = new Schema({
         type: String,
         required: true,
         unique: true
-        // // validation on email
-        // unique: true,
-        // match: [/@gmail.com$/, "Please add a valid email"]
+       
     },
     password: {
         type: String,
         required: [true, "Please add a password"],
         minLength: 6
     },
-    role:{
+    accounttype:{
         type: String,
         required: true
 
@@ -30,9 +29,7 @@ const userSchema = new Schema({
 
 
 userSchema.pre('save', async function(next){
-    // if(!this.isModified('password')){
-    //     next();
-    // }
+    
 
     const salt = await bcrypt.genSalt(10);
     this.password = await bcrypt.hash(this.password, salt)
@@ -40,12 +37,20 @@ userSchema.pre('save', async function(next){
 })
 
 userSchema.methods.getSignedJwtToken = function(){
-    const token = jwt.sign({id: this._id, role: this.role}, "p@ssw0rd", {
-        expiresIn: "30s"
+    const token = jwt.sign({id: this._id, accounttype: this.accounttype}, "p@ssw0rd", {
+        expiresIn: "1d"
     })
 
     return token;
 }
+
+
+userSchema.methods.matchPassword = async function(enteredPassword){
+    return await bcrypt.compare(enteredPassword, this.password)
+}
+
+
+
 
 
 // create model from schema

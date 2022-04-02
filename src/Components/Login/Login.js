@@ -23,29 +23,28 @@ export default function Login() {
         },
         validationSchema: validate,
         onSubmit: async (values) =>{
-            const res = await fetch("http://localhost:4000/login", {method: "POST", headers: {"Content-Type": "application/json"}})
+            const res = await fetch("http://localhost:4000/login", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({"email":formik.values.email,"password":formik.values.password}) })
+        //    console.log("poor",res.body)
             const data = await res.json()
             checkTheData(data)
-            console.log(data);
+            console.log("japan",data);
             
         }
     })
 
-    const checkTheData = (data) =>{
-        const isUserData = data.find((each) => {
-            if(each.email === formik.values.email && each.password === formik.values.password){
-                return true
-            }else{
-                return false
-            }
-        })
-        
-        if(isUserData === undefined){
-            alert("User not Register")
-        }else{
-            const token = isUserData.jwtToken
+
+    const checkTheData=(data)=>{
+        const{token}=data
+        console.log("america",token)
+        if(data.auth=== true){
             Cookies.set("jwt_token", token, {expires: 30})
             navigate('/workouts/')
+
+        }
+        else{
+            console.log("kkkkkk",data)
+            // alert("I am from frontend","User not Register")
+            alert(data.error)
         }
     }
 

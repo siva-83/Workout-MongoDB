@@ -16,8 +16,8 @@ function App() {
     <Route path="/login" element={<LoginRegister/>}/>
     <Route path="/signup" element={<LoginRegister/>}/>
     </Route>
-    <Route path="/workouts/" element={<Home/>}/>
-    <Route path="/workouts/:id" element={<Fullcard/>}/>
+    {/* <Route path="/workouts/" element={<Home/>}/>
+    <Route path="/workouts/:id" element={<Fullcard/>}/> */}
       <Route element = {<PrivateRoute/>}>
       <Route path="/workouts/" element={<Home/>}/>
       <Route path="/workouts/:id" element={<Fullcard/>}/>
