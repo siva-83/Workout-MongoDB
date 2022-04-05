@@ -2,14 +2,15 @@ const express = require('express');
 const { isAuthenticatedUser } = require('../Middlewares/auth');
 const router = express.Router();
 const workouts = require('../models/data')
+const advancedQuery = require('../Middlewares/advanced-query');
 
 
 // protected route on back-end
-router.get('/',isAuthenticatedUser,async (req, res) => {
+router.get('/',[isAuthenticatedUser,advancedQuery(workouts)],async (req, res) => {
     // db and fetch all courses
-
-    let data = await workouts.find();
-    res.json(data);
+        console.log("jeffa",res.advancedQueryResult.data)
+    // let data = await workouts.find();
+    res.json(res.advancedQueryResult.data);
 
 })
 

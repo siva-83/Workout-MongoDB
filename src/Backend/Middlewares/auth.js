@@ -21,26 +21,28 @@ const authenticateUser = async function(req, res, next){
 
 
 const isAuthenticatedUser = async function(req, res, next){
-    // extract token for req header
-    // console.log(req.headers);
+    
     const token = req.headers['authorization'];
     console.log(token);
     if(token) {
         const tokens = token.split(' ');
 
-        // verify tthe token
+        
         try{
             const decodedData = jwt.verify(tokens[1], "p@ssw0rd");
-            console.log(decodedData);
+            console.log("hello",decodedData);
+            req.myname="sivarama"
+            console.log("bye",req)
             if(decodedData.role){
                 req.role = decodedData.role
                 req.id = decodedData.id
+                console.log("bye",req)
             }
             next();
         }
         catch(err){
             console.log('Error caught: ', err)
-            // res.status(403).send('You are not authorized to access this data');
+           
             next(err);
         }
     }

@@ -3,7 +3,8 @@ const { strikethrough } = require('colors');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const jwt = require('jsonwebtoken')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
+const { required } = require('nodemon/lib/config');
 // create a schema
 // create a schema
 const userSchema = new Schema({
@@ -18,11 +19,11 @@ const userSchema = new Schema({
         required: [true, "Please add a password"],
         minLength: 6
     },
-    accounttype:{
+    accounttype: {
         type: String,
-        required: true
-
+        default: "nonprime"
     }
+
 
 
 })

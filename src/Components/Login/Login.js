@@ -38,7 +38,7 @@ export default function Login() {
         console.log("america",token)
         if(data.auth=== true){
             Cookies.set("jwt_token", token, {expires: 30})
-            navigate('/workouts/')
+            navigate('/home')
 
         }
         else{

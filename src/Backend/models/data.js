@@ -1,12 +1,11 @@
 const { strikethrough } = require('colors');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-// create a schema
-// create a schema
+
 const workoutsSchema = new Schema({
     heading: {
         type:String,
-        
+        unique:true
     },
     imageurl: {
         type:String
@@ -19,6 +18,13 @@ const workoutsSchema = new Schema({
     },
     Calorieburnperhour:{
         type:Number
+    },
+    videourl:{
+        type:String,
+        required:true
+    },
+    category:{
+        type:String
     }
 
 

@@ -1,71 +1,31 @@
-import Header from "../Header"
-import { useEffect, useState } from "react"
-import "./index.css"
-import Card from "../Card"
-import Cookies from "js-cookie"
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import Header from '../Header'
+import './index.css'
 
-export default function Home(){
+function Home() {
 
-// const get=async()=>{
-//     const res=await fetch("http://localhost:8888/workouts",{method:"GET"
-// })
-// const data=await res.json()
-// console.log(data)
-// // return(data.map(each=>(<img src={each.imageurl}/>)))
+    const navigate = useNavigate()
 
-// }
-const[element,setelement]=useState([])
+    const goTOWorkout = () =>{
+        navigate('/workouts')
+    }
 
-const[initial,setIntial]=useState("")
-
-useEffect(async() => {
-
-    console.log("i am in useeffect")
-    const jwtToken= Cookies.get("jwt_token")
-    // const resp=await fetch("http://localhost:6000/workouts",{
-    //     method:"GET"
-    // })
-    // console.log(resp)
-
-    // const data=await resp.json()
-    // console.log("jeffa",data)
-    // setelement(data)
-    fetch('http://localhost:4000/workouts',{
-        method:"GET",
-        headers: {
-            Authorization: `Bearer ${jwtToken}`,
-          },
-    })
-    .then(res => res.json())
-    .then(data => {
-        console.log("jeffa",data);
-        setelement(data)
-        ;
-    })
-  }, [])
-
-
-  const settingvalue=(event)=>{
-      console.log(event.target.value)
-        setIntial(event.target.value)
-  }
-
-    return(
-        <div className="main-home-container">
+  return (
+    <>
         <Header/>
-        <div className="main-home-container-2">
-            <div>
-            <div className="input-group input-cust">
-                <span class="input-group-text">Search</span>
-                {/* <textarea class="form-control" aria-label="With textarea" onChange={settingvalue}></textarea> */}
-                <input type="text" onChange={settingvalue} className="input-cont"/>
-             </div>
-             </div>
-             <ul className="list-item-container">
-                 {/* {element.length==0?"":element.map(each=>(<Card each={each}/>))} */}
-             {element.length==0?"":element.filter((eachele)=>(eachele.heading.toLowerCase().includes(initial))).map(each=>(<Card each={each}/>))}
-             </ul>
+        <div className='home-container'>
+            <div className='home-card'>
+                <div className='home-content'>
+                    <h1 className='home-title'>Workouts</h1>
+                    <p className='home-para'>Most people can increase fitness by increasing physical activity levels. Increases in muscle size from resistance training are primarily determined by diet and testosterone. This genetic variation in improvement from training is one of the key physiological differences between elite athletes and the larger population. There is evidence that exercising in middle age may lead to better physical ability later in life.</p>
+                    <button onClick={goTOWorkout} className='home-button'>Let's Start</button>
+                </div>
+            </div>
+            <img className='home-image' src='https://img.freepik.com/free-vector/fitness-tracker-concept-illustration_114360-2569.jpg?w=740&t=st=1648875350~exp=1648875950~hmac=621367b72450eebc7b09dba47c05b896918ad0d909e86fdb99ef9e98fdeeb99c' />
         </div>
-        </div>
-    )
+    </>
+  )
 }
+
+export default Home

@@ -1,40 +1,60 @@
-.final-card-container{
-    /* width:80vw;
-    height:80vh; */
-   
-    width:70vw;
-    height:90vh;
-   padding-bottom: 30px;
+.main-card-container{
+    height: 100vh;
+    padding-top: 65px;
+    padding-bottom: 55px;
+}
+.main-card{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    box-shadow: none ;
-    overflow: auto;
-  
-}
-.fullcard-image-container{
-    width:60vw;
-    height:60vh;
-    display:flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-}
-.fullcard-image{
-    width:100%;
-    height:100%
-}
-.for-look{
-    width: 100vw;
-    /* height:90vh; */
-    display: flex;
-    flex-direction: row;
     justify-content: center;
-    padding:20px;
-    
-    overflow: auto;
+    padding-left: 125px;
 }
-.full-card-para-cont{
-    text-align: left;
+.card-image{
+    height: 380px;
+    width: 680px;
+    margin-right: 50px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 7px 0px #000000;
+    border: none;
+}
+.card-content{
+    margin-top: 20px;
+}
+.card-heading{
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+.card-calories{
+    font-size: 15px;
+}
+.calorie{
+    color: red;
+    font-weight: 600;
+    font-size: 15px;
+}
+.card-para1{
+    font-size: 15px;
+    word-spacing: 2px;
+    width: 80%;
+    margin-top: 1px;
+    padding-left: 8px;
+}
+.card-descrip{
+    font-size: 16px;
+    margin-bottom: 1px;
+}
+.video-player{
+    padding-left: 125px;
+    margin-top: 60px;
+    padding-bottom: 35px;
+}
+.card-title{
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 65px;
+}
+.video-container{
+    display: flex;
+    margin-top: 38px;
 }
