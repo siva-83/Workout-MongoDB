@@ -44,28 +44,14 @@ router.post("/login",authenticateUser,async(req,res)=>{
     res.status(200).json({auth: true, token: token});
 
 })
-
-
-// exports.login = asyncHandler( async (req, res) => {
-
-//     const users = await User.findOne({email: req.body.email})
-//     const token = users.getSignedJwtToken();
-//     res.status(200).json({auth: true, token: token});
-// } )
-
-// router.delete('/:id', async (req, res) => {
-//     // db and insert one course    
-//     console.log(req.params.id);
-//     let result = await Employee.findByIdAndDelete(req.params.id);
-//     console.log(result);
-//     res.json(result);
-// })
-
-// router.patch('/:id', async (req, res) => {
-//     // db and insert one course    
-//     console.log(req.params.id);
-//     let updatedEmployee = await Employee.findByIdAndUpdate(req.params.id, req.body);
-//     res.json(updatedEmployee)
-// })
+router.patch('/:id',isAuthenticatedUser, async (req, res) => {
+    
+    
+    
+    console.log("i am ready to use")
+    console.log(req.params.id);
+    let updatedUser = await users.findByIdAndUpdate(req.params.id, req.body);
+    res.json(updatedUser)
+})
 
 module.exports = router

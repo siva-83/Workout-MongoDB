@@ -1,4 +1,4 @@
-/* .main-home-container{
+/* /* .main-home-container{
     width:100vw;
     height:100vh;
     overflow: hidden;
@@ -36,7 +36,6 @@
 } */
 
 
-
 .main-home-container{
     width:100vw;
     height:100vh;
@@ -61,6 +60,7 @@
     flex-direction:row;
     justify-content: center;
     flex-wrap:wrap ;
+    margin-top: 60px;
 }
 
 .input-cont{

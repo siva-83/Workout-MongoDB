@@ -33,8 +33,8 @@ const isAuthenticatedUser = async function(req, res, next){
             console.log("hello",decodedData);
             req.myname="sivarama"
             console.log("bye",req)
-            if(decodedData.role){
-                req.role = decodedData.role
+            if(decodedData.accounttype){
+                req.accounttype = decodedData.accounttype
                 req.id = decodedData.id
                 console.log("bye",req)
             }
@@ -55,5 +55,18 @@ const isAuthenticatedUser = async function(req, res, next){
 
 
 
+const authorizeRoles = (...roles) => {
+    return (req, res, next)=> {
+        if(roles.includes(req.accounttype)){
+            next();
+        }
+        else{
+            res.status(403).send('You dont have an authorized person to access')
+        }
+    }
+}
 
-module.exports={authenticateUser,isAuthenticatedUser}
+
+
+
+module.exports={authenticateUser,isAuthenticatedUser,authorizeRoles}
