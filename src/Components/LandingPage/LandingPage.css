@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand+SC|Roboto&display=swap');
 .workout-image{
     height: 600px;
     width: 800px;
@@ -16,8 +18,38 @@
     font-weight: 500;
     text-align: center;
 }
+
+
+
+.welcome-title2{
+    font-size: 10px;
+    font-weight: 500;
+    text-align: end;
+}
+
+
+
 .workout-title{
     font-size: 64px;
     font-weight: 800;
     color: #329fc7;
+}
+
+.landing-page-carousel{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.car-container{
+    width:800px !important;
+    
+    background-color:blue;
+}
+.carousel-width{
+    width:800px !important;
+}
+.intro-workout{
+    font-size:15px;
+    font-weight: normal !important;
+    font-family: Arial;
 }

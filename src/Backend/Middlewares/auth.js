@@ -12,7 +12,7 @@ const authenticateUser = async function(req, res, next){
         if(isMatch){
             next();
         }else{
-            res.status(401).send({"auth":false,"error":"Invalid Password"})
+            res.status(401).send({"auth":false,"error":"Invalide Password"})
         }
     }else{
         res.status(200).send({"auth":false,"error":"invalide username"})

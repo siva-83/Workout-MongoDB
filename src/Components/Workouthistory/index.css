@@ -6,3 +6,12 @@
     align-items: center;
     margin-top:10px
 }
+.nohistory-found{
+    font-size:30px;
+    font-weight:bold;
+    margin-top:100px
+}
+
+.final-info{
+    margin-top: 200px;
+}

@@ -31,7 +31,14 @@ export default function Register() {
             const res = await fetch("http://localhost:4000/signup", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({...newData}) })
             const data = await res.json()
             console.log("successfully registered",data)
-            setregistrationstatus(true)
+            if(data.success==true){
+                setregistrationstatus(true)
+            }
+            else{
+                if(data.message=='Duplicate key')
+                alert("Username already used")
+            }
+            
         }
     })
   return (

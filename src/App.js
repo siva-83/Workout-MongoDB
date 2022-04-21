@@ -23,6 +23,8 @@ function App() {
       <Route element = {<PrivateRoute1/>}>
         <Route path="/login" element={<LoginRegister/>}/>
         <Route path="/signup" element={<LoginRegister/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/contact" element={<Contact/>}/>
         
       </Route>
       <Route element = {<PrivateRoute/>}>
@@ -30,8 +32,8 @@ function App() {
         <Route path="/store" element={<Cart/>}/>
         <Route path="/workouts" element={<Workouts/>}/>
         <Route path="/workouts/:id" element={<Fullcard/>}/>
-        <Route path="/about" element={<About/>}/>
-        <Route path="/contact" element={<Contact/>}/>
+        {/* <Route path="/about" element={<About/>}/>
+        <Route path="/contact" element={<Contact/>}/> */}
         <Route path="/workouthistory" element={<Workouthistory/>}/>
         <Route path="*" element={<Notfound/>}/>
       </Route>

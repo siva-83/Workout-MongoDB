@@ -3,7 +3,9 @@ const express = require('express');
 const router = express.Router();
 const{authenticateUser,isAuthenticatedUser}=require("../Middlewares/auth")
 const users = require('../models/user')
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const expressAsyncHandler = require('express-async-handler');
+const asyncHandler = require('express-async-handler')
 
 
 // protected route on back-end
@@ -28,13 +30,18 @@ const jwt = require('jsonwebtoken')
 
 
     
-router.post('/signup', async (req, res) => {
+router.post('/signup', asyncHandler(async (req, res) => {
     // db and insert one course  
     console.log("i am ready",req.body)  
     let data = await users.create(req.body);
-    res.status(201).json(data);
+
+    console.log("rey jeffanayala", data)
+
+    res.status(201).json({success: true});
+
+
     console.log("i am in route")
-})
+}))
 
 
 router.post("/login",authenticateUser,async(req,res)=>{

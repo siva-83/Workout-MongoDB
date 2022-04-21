@@ -25,30 +25,16 @@ li{
   
 }
 
-
-/* .graph-main-card{
+.data-container-for-final{
+    width:500px;
+    height:200px;
     display: flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items: center;
-    width:90vw;
-    height:90vh;
-    overflow:auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
 
-} */
 
-/* .graph-main-card{
-    display: flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items: center;
-    /* width:90vw;
-    height:100vh; */
-    /* overflow:auto;
-    overflow-x: hidden;
-    width: 80vw;
-    height:200px */
-/* } */ */
 .checking{
     /* background-color: aqua; */
    
@@ -56,4 +42,22 @@ li{
     flex-direction: row !important;
     justify-content: center !important;
     align-items: center !important;
+}
+
+.graph-head{
+    font-size: 20px;
+    color:#6f42c1;
+    font-weight:bold
+}
+
+.graph-para{
+    font-size: 18px;
+    color:#6f42c1;
+    font-weight:bold
+
+}
+.impor{
+    font-weight:bold;
+    color:black;
+    font-size: 20px;
 }

@@ -10,6 +10,7 @@ const userRoute=require("./Routes/user")
 const storeRoute=require("./Routes/store")
 const colors = require('colors');
 const workouthistories = require('./models/workouthistory');
+const errorhandler = require('./Middlewares/errorhandler');
 
 
 const url = 'mongodb://localhost:27017/sivadb';
@@ -27,6 +28,8 @@ app.use('/workouts', workoutRoute)
 app.use('/', userRoute)
 app.use('/store', storeRoute)
 app.use('/workoutshistory', workouthistoryRoute)
+
+app.use(errorhandler)
 
 
 app.listen(4000, () => console.log('listening on 4000...'));

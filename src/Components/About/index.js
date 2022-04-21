@@ -1,11 +1,12 @@
 import React from 'react'
 import Header from '../Header'
+import LoginHeader from '../LoginHeader/LoginHeader'
 import "./index.css"
 
 function About() {
   return (
     <>
-        <Header/>
+        <LoginHeader/>
         <div className='about-container'>
             <div className='about-card'>
                 <div className='about-content'>

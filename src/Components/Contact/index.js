@@ -1,11 +1,12 @@
 import React from 'react'
 import Header from '../Header'
+import LoginHeader from '../LoginHeader/LoginHeader'
 import "./index.css"
 
 function Contact() {
   return (
     <>
-        <Header/>
+        <LoginHeader/>
         <div className='contact-container'>
             <div className='contact-card'>
                 <div className='contact-content'>
